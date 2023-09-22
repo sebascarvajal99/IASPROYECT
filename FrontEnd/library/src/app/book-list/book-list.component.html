@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 col-lg-3" *ngFor="let libro of book">
+      <div class="card mb-4" style="width: 224px;">
+        <img src="assets/pngwing.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{libro.name}}</h5>
+          <p class="card-text">ISBN: {{libro.isbn}}</p>
+          <button type="submit" class="btn btn-primary request " (click)="request(libro)" [disabled]="buttonDisabled">Solicitar</button>
+          <button type="submit" class="btn btn-warning order " (click)="returnBook(libro)">Devolver Libro</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

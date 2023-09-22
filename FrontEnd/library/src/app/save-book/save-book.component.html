@@ -1,0 +1,30 @@
+<div class="container">
+    <form>
+        <div class="mb-3">
+          <label for="namebook" class="form-label">Título del Libro</label>
+          <input type="text" class="form-control" id="namebook" [(ngModel)]="nameBook" name="nameBook" required [ngClass]="{'is-invalid': !nameBook}" >
+          <div class="form-text">Es Necesario que coloques el título del libro.</div>
+          <div class="invalid-feedback">
+            El campo "Título del Libro" es requerido.
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="isbn" class="form-label">ISBN</label>
+          <input type="text" class="form-control" id="isbn" [(ngModel)]="isbnBook" name="isbnnameBook" required [ngClass]="{'is-invalid': !isbnBook}" >
+          <div class="form-text">Es Necesario que coloques el ISBN del libro.</div>
+          <div class="invalid-feedback">
+            El campo "ISBN" es requerido.
+          </div>
+        </div>
+        <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1" [(ngModel)]="borrowed" name="borrowed">
+          <label class="form-check-label" for="exampleCheck1">Prestado</label>
+          <div class="form-text">
+           Click -> esta Prestado.
+           No Click -> esta disponible
+          </div>
+        </div>
+        <button type="submit" class="btn btn-success" (click)="saveBook()">Guardar Libro</button>
+    </form>
+</div>
+<br>

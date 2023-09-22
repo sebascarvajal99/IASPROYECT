@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  angular-app:
+    container_name: angular
+    build:
+      context: ./FrontEnd/library  
+    ports:
+      - '4200:80'
+    depends_on:
+      - app
+  app:
+    build:
+      context: ./BackEnd/IASLibrary
+    container_name: app
+    ports:
+      - "8080:8080"
+    expose:
+      - "8080"
+    depends_on:
+      - bdLibrary-back
+    volumes:
+      - ./BackEnd/IASLibrary/app:/app
+
+  bdLibrary-back:
+    image: postgres:latest
+    container_name: bdLibrary-back
+    ports:
+      - "5432:5432"
+    expose:
+      - "5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 9908
+      POSTGRES_DB: postgres
+      PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+      - bdLibrary-back-data:/var/lib/postgresql/data/
+
+volumes:
+  app-data:
+  bdLibrary-back-data:

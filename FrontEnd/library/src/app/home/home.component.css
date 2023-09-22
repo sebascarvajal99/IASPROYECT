@@ -1,0 +1,65 @@
+.libros-container {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  :host {
+    display: block;
+    overflow: hidden;
+  }
+
+  /* ------ */
+  .carousel-container {
+    width: 100%;
+    max-width: 700px; /* Ancho máximo del carousel */
+    margin: 0 auto; /* Centra el carousel en la pantalla */
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .carousel-slide {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .carousel-slide img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .carousel-controls {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  
+  .prev-button,
+  .next-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .prev-button:hover,
+  .next-button:hover {
+    background-color: #0056b3;
+  }
+  @media (max-width: 600px) {
+    .carousel-item {
+      flex: 0 0 100%; /* Cambia el tamaño de los elementos para pantallas pequeñas */
+    }
+  }
+  
+  @media (min-width: 601px) and (max-width: 1024px) {
+    .carousel-item {
+      flex: 0 0 50%; /* Cambia el tamaño de los elementos para pantallas medianas */
+    }
+  }
+
+  
+  
+  
